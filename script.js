@@ -39,7 +39,7 @@ eightBtn.addEventListener("click", eight);
 nineBtn.addEventListener("click", nine);
 zeroBtn.addEventListener("click", zero);
 ansBtn.addEventListener("click", ans);
-eqBtn.addEventListener("click", equals);
+eqBtn.addEventListener("click", workaround);
 clearBtn.addEventListener("click", clear);
 decimalBtn.addEventListener("click", decimal);
 backspaceBtn.addEventListener("click", backspace);
@@ -58,6 +58,9 @@ let num2 = 2;
 
 
 //functions
+function workaround(){
+  equals(false);
+}
 
 function add(valueOne, valueTwo) {
   newVal = valueOne + valueTwo;
@@ -86,7 +89,7 @@ function multi(valueOne, valueTwo) {
   console.log(newVal);
 }
 
-function equals() {
+function equals(extra) {
 
   num1 = parseFloat(textOne.innerText);
   num2 = parseFloat(textTwo.innerText);
@@ -105,11 +108,18 @@ function equals() {
     if (isMulti == true) {
       multi(num1, num2);
     }
+    if(!extra){
     ansTxt.innerText = "= " + newVal.toString();
     sec1 = true;
     textOne.innerText = "";
     textTwo.innerText = "";
     signTxt.innerText = "";
+  }else{
+
+    textOne.innerText = newVal.toString();;
+    textTwo.innerText = "";
+
+  }
   }
 
 }
@@ -118,24 +128,37 @@ function plus() {
 
   if (textOne.innerText != "") {
     signTxt.innerText = "+";
-    isAdd = true;
-    isDiv = false;
-    isSub = false;
-    isMulti = false;
+
     if (sec1) {
+      sec1 = false;
+      isAdd = true;
+      isDiv = false;
+      isSub = false;
+      isMulti = false;
+    }else{
+      equals(true);
+      signTxt.innerText = "+";
       sec1 = false;
     }
   }
 }
 
-function divideSign() {
-  if (textOne.innerText != "") {
-    signTxt.innerText = "/";
-    isAdd = false;
-    isDiv = true;
+function divideSign() {isAdd = true;
+    isDiv = false;
     isSub = false;
     isMulti = false;
+  if (textOne.innerText != "") {
+    signTxt.innerText = "/";
+
     if (sec1) {
+      sec1 = false;
+      isAdd = false;
+      isDiv = true;
+      isSub = false;
+      isMulti = false;
+    }else{
+      equals(true);
+      signTxt.innerText = "/";
       sec1 = false;
     }
   }
@@ -144,11 +167,15 @@ function divideSign() {
 function subtractSign() {
   if (textOne.innerText != "") {
     signTxt.innerText = "-";
-    isAdd = false;
-    isDiv = false;
-    isSub = true;
-    isMulti = false;
     if (sec1) {
+      sec1 = false;
+      isAdd = false;
+      isDiv = false;
+      isSub = true;
+      isMulti = false;
+    }else{
+      equals(true);
+      signTxt.innerText = "-";
       sec1 = false;
     }
   }
@@ -157,11 +184,16 @@ function subtractSign() {
 function multiSign() {
   if (textOne.innerText != "") {
     signTxt.innerText = "x";
-    isAdd = false;
-    isDiv = false;
-    isSub = false;
-    isMulti = true;
+
     if (sec1) {
+      sec1 = false;
+      isAdd = false;
+      isDiv = false;
+      isSub = false;
+      isMulti = true;
+    }else{
+      equals(true);
+      signTxt.innerText = "x";
       sec1 = false;
     }
   }
@@ -195,7 +227,10 @@ function three() {
   if (sec1 == true) {
     textOne.innerText = textOne.innerText + "3";
   } else {
-    textTwo.innerText = textTwo.innerText + "3";
+    textTwo.innerText = textTwo.innerTeisAdd = true;
+    isDiv = false;
+    isSub = false;
+    isMulti = false;xt + "3";
   }
 
 }
@@ -303,7 +338,7 @@ function clear() {
 }
 
 function decimal() {
-
+ansTxt.innerText = "";
   if (sec1 == true) {
     if (textOne.innerText == "") {
       textOne.innerText = textOne.innerText + "0.";
@@ -314,7 +349,7 @@ function decimal() {
     if (textTwo.innerText == "") {
       textTwo.innerText = textTwo.innerText + "0.";
     } else {
-      textOne.innerText = textTwo.innerText + ".";
+      textTwo.innerText = textTwo.innerText + ".";
     }
   }
 
