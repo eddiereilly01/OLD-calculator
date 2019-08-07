@@ -1,0 +1,133 @@
+.btn {
+  display: inline;
+  margin: 2px;
+  font: 16 100% langdon;
+  padding: 0px;
+  width: 70px;
+  height: 30px;
+  border: 1px solid rgb(0, 0, 0);
+  cursor: pointer;
+  color: white;
+}
+
+.panel {
+  border: 1px solid black;
+  width: 242px;
+  height: 344px;
+  position: absolute;
+  top: 30%;
+  left: 45%;
+  background-color: #aaa5ab;
+
+}
+
+.container {
+  width: 230px;
+  border: 1px solid black;
+  top: 30%;
+  background-color: black;
+  margin-left: 5px;
+
+
+
+}
+
+.top {
+  width: 230px;
+  height: 90px;
+  background-color: black;
+  border: 1px solid black;
+  top: 20%;
+  margin-left: 5px;
+  margin-top: 5px;
+
+}
+
+#clearBtn {
+  background-color: rgba(40, 44, 52, 1);
+}
+
+#ansBtn {
+  background-color: rgba(40, 44, 52, 1);
+}
+
+#zeroBtn {
+  background-color: rgba(89, 89, 90, 1);
+}
+
+#oneBtn {
+  background-color: rgba(89, 89, 90, 1);
+}
+
+#twoBtn {
+  background-color: rgba(89, 89, 90, 1);
+}
+
+#threeBtn {
+  background-color: rgba(89, 89, 90, 1);
+}
+
+#fourBtn {
+  background-color: rgba(89, 89, 90, 1);
+}
+
+#fiveBtn {
+  background-color: rgba(89, 89, 90, 1);
+}
+
+#sixBtn {
+  background-color: rgba(89, 89, 90, 1);
+}
+
+#sevenBtn {
+  background-color: rgba(89, 89, 90, 1);
+}
+
+#eightBtn {
+  background-color: rgba(89, 89, 90, 1);
+}
+
+#nineBtn {
+  background-color: rgba(89, 89, 90, 1);
+}
+
+#addBtn {
+  background-color: rgba(89, 89, 90, 1);
+}
+
+#subBtn {
+  background-color: rgba(89, 89, 90, 1);
+}
+
+#divBtn {
+  background-color: rgba(89, 89, 90, 1);
+}
+
+#multiBtn {
+  background-color: rgba(89, 89, 90, 1);
+}
+
+#decimalBtn {
+  background-color: rgba(89, 89, 90, 1);
+}
+
+#backspaceBtn {
+  background-color: rgba(40, 44, 52, 1);
+}
+
+#eqBtn {
+  background-color: #f9a200;
+  width: 225px;
+}
+
+h3 {
+  display: inline;
+  color: white;
+  font: comic serif;
+}
+h2{
+  text-align: center;
+}
+body{
+  background-image: url("splash.jpg");
+}
